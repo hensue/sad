@@ -1,21 +1,21 @@
 const express = require("express");
 const app = express();
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require("path");
-const multer = require('multer');
+// const multer = require('multer');
 
-const keys = require("./config/keys");
+// const keys = require("./config/keys");
 
-const cors = require("cors");
+// const cors = require("cors");
 
-app.use(cors());
+// app.use(cors());
 
 app.use(express.static(path.join(__dirname, "client", "build1")));
 
 
 app.use("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "client", "build1", "index.html"));
+  res.sendFile(path.join(__dirname, "client", "build1", "index.html"));
 });
 
 // mongoose.Promise = global.Promise;
